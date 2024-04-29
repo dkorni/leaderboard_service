@@ -1,5 +1,6 @@
+using LeaderboardService.API.Extensions;
 using LeaderboardService.Application.Queries;
-using LeaderboardService.Domain;
+using LeaderboardService.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,10 +18,17 @@ public class LeaderBoardMemberController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<LeaderBoardMemberModel[]> GetAll()
+    public async Task<PagedResponseDto<LeaderBoardMemberDto>> GetAll(int page = 1, int pageSize = 10)
     {
-        var getAllQuery = new GetAllLeaderBoardMembers();
-        var results = await _mediator.Send(getAllQuery);
-        return results;
+        var getAllQuery = new GetAllLeaderBoardMembers(page, pageSize);
+        var response = await _mediator.Send(getAllQuery);
+
+
+        return new PagedResponseDto<LeaderBoardMemberDto>(
+            response.page,
+            response.pageSize,
+            response.totalPages,
+            response.totalRecords,
+            response.records.Select(x => x.ToDto()).ToArray());
     }
 }

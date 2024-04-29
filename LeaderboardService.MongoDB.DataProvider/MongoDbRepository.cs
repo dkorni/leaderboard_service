@@ -28,6 +28,17 @@ public class MongoDbRepository<TEntity> : IRepository<TEntity> where TEntity : E
         return await dbContext.Set<TEntity>().AsNoTracking().ToArrayAsync();
     }
 
+    public async Task<TEntity[]> GetAll(int page, int pageSize)
+    {
+        await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
+        
+        return await dbContext.Set<TEntity>()
+            .AsNoTracking()
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToArrayAsync();
+    }
+
     public async Task<TEntity[]> Find(Expression<Func<TEntity, bool>> predicate)
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();

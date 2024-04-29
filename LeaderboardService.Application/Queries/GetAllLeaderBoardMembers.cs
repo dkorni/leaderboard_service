@@ -3,6 +3,4 @@ using MediatR;
 
 namespace LeaderboardService.Application.Queries;
 
-public class GetAllLeaderBoardMembers : IRequest<LeaderBoardMemberModel[]>
-{
-}
+public record GetAllLeaderBoardMembers(int page, int pageSize) : IRequest<PagedResponse<LeaderBoardMemberModel>>;

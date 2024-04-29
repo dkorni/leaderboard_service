@@ -21,6 +21,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\LeaderboardService.Application\LeaderboardService.Application.csproj" />
+      <ProjectReference Include="..\LeaderboardService.Contracts\LeaderboardService.Contracts.csproj" />
       <ProjectReference Include="..\LeaderboardService.MongoDB.DataProvider\LeaderboardService.MongoDB.DataProvider.csproj" />
     </ItemGroup>
 
