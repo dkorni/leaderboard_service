@@ -1,5 +1,7 @@
 using LeaderboardService.Application.Interfaces;
 using LeaderboardService.Domain;
+using LeaderboardService.Domain.Constants;
+using LeaderboardService.Domain.Exceptions;
 using MediatR;
 
 namespace LeaderboardService.Application.Queries;
@@ -15,6 +17,12 @@ public class GetAllLeaderBoardMembersHandler : IRequestHandler<GetAllLeaderBoard
     
     public async Task<PagedResponse<LeaderBoardMemberModel>> Handle(GetAllLeaderBoardMembers request, CancellationToken cancellationToken)
     {
+        if (request.page <= 0)
+            throw new ValidationException(ValidationExceptionMessages.InvalidPage);
+        
+        if (request.pageSize <= 0)
+            throw new ValidationException(ValidationExceptionMessages.InvalidPageSize);
+        
         var t1 = _repository.Count(_ => true);
         var t2 = _repository.GetAll(request.page, request.pageSize);
 

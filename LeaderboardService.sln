@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.Tests.Mi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.Contracts", "LeaderboardService.Contracts\LeaderboardService.Contracts.csproj", "{E228B209-D29E-41DF-9C8A-A921EA7DB1CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.Tests.Unit", "LeaderboardService.Tests.Unit\LeaderboardService.Tests.Unit.csproj", "{EC215369-F602-4392-B4E6-C32B02477A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{E228B209-D29E-41DF-9C8A-A921EA7DB1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E228B209-D29E-41DF-9C8A-A921EA7DB1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E228B209-D29E-41DF-9C8A-A921EA7DB1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC215369-F602-4392-B4E6-C32B02477A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC215369-F602-4392-B4E6-C32B02477A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC215369-F602-4392-B4E6-C32B02477A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC215369-F602-4392-B4E6-C32B02477A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{71ACF445-27FC-44F3-BC1B-1E37FD5B0448} = {6A57D556-053D-45B0-A362-09F4325E7B64}
@@ -61,5 +67,6 @@ Global
 		{49888F6F-96D9-4481-A641-3D386E07AB58} = {68636D0D-1709-4C0E-9D61-D327DEEC24AA}
 		{F2D8E3F8-FD8A-4EAF-BE7B-8ACB7F664A27} = {68636D0D-1709-4C0E-9D61-D327DEEC24AA}
 		{E228B209-D29E-41DF-9C8A-A921EA7DB1CB} = {6A57D556-053D-45B0-A362-09F4325E7B64}
+		{EC215369-F602-4392-B4E6-C32B02477A4A} = {68636D0D-1709-4C0E-9D61-D327DEEC24AA}
 	EndGlobalSection
 EndGlobal
