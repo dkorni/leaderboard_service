@@ -1,5 +1,6 @@
 using LeaderboardService.Application.Interfaces;
 using LeaderboardService.Domain;
+using LeaderboardService.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
@@ -16,9 +17,7 @@ public static class DependencyInjection
             
             if (connectionString == null)
             {
-                // todo log it and throw exception
-                Console.WriteLine("You must set your 'MONGODB_URI' environment variable. To learn how to set it, see https://www.mongodb.com/docs/drivers/csharp/current/quick-start/#set-your-connection-string");
-                Environment.Exit(0);
+                throw new InternalServerException("'MONGODB_URI' environment variable is not set.");
             }
             
             var client = new MongoClient(connectionString);

@@ -11,7 +11,7 @@ namespace LeaderboardService.Tests.Unit;
 public class GetAllLeaderBoardMembersHandlerNegativeTests
 {
     [Test]
-    public async Task GetAllLeaderBoardMembersHandler_ShouldThrowValidationExceptionInvalidPage()
+    public void GetAllLeaderBoardMembersHandler_ShouldThrowValidationExceptionInvalidPage()
     {
         // arrange
         var page = 0;

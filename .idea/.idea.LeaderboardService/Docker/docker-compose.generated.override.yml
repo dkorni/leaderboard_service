@@ -1,0 +1,59 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  leaderboardservice-api-1:
+    build:
+      context: "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService"
+      dockerfile: "LeaderboardService.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/LeaderboardService.API.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "leaderboardservice.api:dev"
+    ports: []
+    volumes:
+    - "/Users/deniskornienko/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService/LeaderboardService.API:/app:rw"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService:/src:rw"
+    working_dir: "/app"
+  leaderboardservice-api-2:
+    build:
+      context: "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService"
+      dockerfile: "LeaderboardService.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/LeaderboardService.API.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "leaderboardservice.api:dev"
+    ports: []
+    volumes:
+    - "/Users/deniskornienko/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService/LeaderboardService.API:/app:rw"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService:/src:rw"
+    working_dir: "/app"
+  leaderboardservice-event-listener-1:
+    build:
+      context: "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService"
+      dockerfile: "LeaderboardService.EventHost/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/LeaderboardService.EventHost.dll"
+    environment:
+      DOTNET_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "leaderboardservice.eventhost:dev"
+    ports: []
+    volumes:
+    - "/Users/deniskornienko/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService/LeaderboardService.EventHost:/app:rw"
+    - "/Users/deniskornienko/Desktop/Dotnet Projects/LeaderboardService/LeaderboardService:/src:rw"
+    working_dir: "/app"

@@ -20,6 +20,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.Contract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.Tests.Unit", "LeaderboardService.Tests.Unit\LeaderboardService.Tests.Unit.csproj", "{EC215369-F602-4392-B4E6-C32B02477A4A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F49355FD-CC7F-4661-B32A-7384BFF56486}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.EventHandlers", "LeaderboardService.EventHandlers\LeaderboardService.EventHandlers.csproj", "{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.EventHost", "LeaderboardService.EventHost\LeaderboardService.EventHost.csproj", "{34CBDEC2-648A-41F4-9793-A300261979B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +67,14 @@ Global
 		{EC215369-F602-4392-B4E6-C32B02477A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC215369-F602-4392-B4E6-C32B02477A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC215369-F602-4392-B4E6-C32B02477A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CBDEC2-648A-41F4-9793-A300261979B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CBDEC2-648A-41F4-9793-A300261979B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CBDEC2-648A-41F4-9793-A300261979B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CBDEC2-648A-41F4-9793-A300261979B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{71ACF445-27FC-44F3-BC1B-1E37FD5B0448} = {6A57D556-053D-45B0-A362-09F4325E7B64}
@@ -68,5 +85,7 @@ Global
 		{F2D8E3F8-FD8A-4EAF-BE7B-8ACB7F664A27} = {68636D0D-1709-4C0E-9D61-D327DEEC24AA}
 		{E228B209-D29E-41DF-9C8A-A921EA7DB1CB} = {6A57D556-053D-45B0-A362-09F4325E7B64}
 		{EC215369-F602-4392-B4E6-C32B02477A4A} = {68636D0D-1709-4C0E-9D61-D327DEEC24AA}
+		{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35} = {6A57D556-053D-45B0-A362-09F4325E7B64}
+		{34CBDEC2-648A-41F4-9793-A300261979B7} = {6A57D556-053D-45B0-A362-09F4325E7B64}
 	EndGlobalSection
 EndGlobal
