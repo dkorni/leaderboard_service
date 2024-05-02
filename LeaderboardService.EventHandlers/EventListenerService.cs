@@ -57,7 +57,7 @@ public class EventListenerService : BackgroundService
         {
             BootstrapServers = bootstrapServers,
             GroupId = groupId,
-            AutoOffsetReset = AutoOffsetReset.Earliest
+            AutoOffsetReset = AutoOffsetReset.Earliest,
         };
 
         var retryPipeline = GetRetryPipeline();

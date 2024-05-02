@@ -1,26 +1,38 @@
 ﻿services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  
   leaderboardservice-api-1:
     image: leaderboardservice.api
+    depends_on:
+      - mongodb
     build:
       context: .
       dockerfile: LeaderboardService.API/Dockerfile
     environment:
-      - MONGODB_URI=mongodb+srv://denyskorniienkodev:SI2KLMo8QfjiyBKz@cluster0.qnrxccf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - MONGODB_URI=mongodb://mongodb:27017
     expose:
       - "8080"
   
   leaderboardservice-api-2:
     image: leaderboardservice.api
+    depends_on:
+      - mongodb
     build:
       context: .
       dockerfile: LeaderboardService.API/Dockerfile
     environment:
-      - MONGODB_URI=mongodb+srv://denyskorniienkodev:SI2KLMo8QfjiyBKz@cluster0.qnrxccf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - MONGODB_URI=mongodb://mongodb:27017
     expose:
       - "8080"
   
   nginx:
     image: nginx
+    depends_on:
+      - leaderboardservice-api-1
+      - leaderboardservice-api-2
     volumes:
       - "./nginx.conf:/etc/nginx/nginx.conf"
     ports:
@@ -83,6 +95,7 @@
     image: leaderboardservice.eventhost
     depends_on:
       - init-kafka
+      - mongodb
     build:
       context: .
       dockerfile: LeaderboardService.EventHost/Dockerfile
@@ -90,3 +103,17 @@
       - BootstrapServers=kafka:9092
       - GroupId=leaderboard-service-listner
       - Topic=leaderboard
+      - MONGODB_URI=mongodb://mongodb:27017
+  
+  mock-server:
+    image: leaderboardservice.tests.mockgameserver
+    build:
+      context: .
+      dockerfile: LeaderboardService.Tests.MockGameServer/Dockerfile
+    environment:
+      - BootstrapServers=kafka:9092
+      - Topic=leaderboard
+      - MinEventsPerSecond=5
+      - MaxEventsPerSecond=10
+      - MinTimeout=3000
+      - MaxTimeout=5000

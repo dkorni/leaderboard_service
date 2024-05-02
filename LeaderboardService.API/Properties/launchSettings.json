@@ -26,8 +26,7 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7193;http://localhost:5196",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "MONGODB_URI": "mongodb+srv://denyskorniienkodev:SI2KLMo8QfjiyBKz@cluster0.qnrxccf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "IIS Express": {
