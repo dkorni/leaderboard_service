@@ -26,7 +26,7 @@ public class UpdateUserScoreEventDataHandler : IEventHandler<UpdateUserScoreEven
         var createOrUpdateCommand =
             new CreateOrUpdateLeaderboardMember(eventData.UserId, eventData.Score, eventData.TimeStamp);
 
-        await _mediator.Publish(createOrUpdateCommand);
+        await _mediator.Send(createOrUpdateCommand);
         
         _logger.Information("Finished processing event {EventName}", typeof(UpdateUserScoreEventData).Name);
     }

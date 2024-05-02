@@ -1,7 +1,9 @@
 ﻿namespace LeaderboardService.Domain;
 
-public class LeaderBoardMemberModel : Entity
+public class LeaderBoardMemberModel : IEntity
 {
+    public Guid Id { get; set; }
+
     public int UserId { get; set; }
 
     public int ScoreSummary { get; set; }

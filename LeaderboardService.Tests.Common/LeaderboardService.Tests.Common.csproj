@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\LeaderboardService.Contracts\LeaderboardService.Contracts.csproj" />
       <ProjectReference Include="..\LeaderboardService.Domain\LeaderboardService.Domain.csproj" />
     </ItemGroup>
 

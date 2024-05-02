@@ -77,16 +77,20 @@ public class EventListenerService : BackgroundService
 
                     try
                     {
-                        var e = JsonConvert.DeserializeObject<Event<EventData>>(messageBody);
+                        IEvent<IEventData> e = JsonConvert.DeserializeObject<IEvent<IEventData>>(messageBody, new JsonSerializerSettings()
+                        {
+                            TypeNameHandling = TypeNameHandling.All
+                        });
                     
                         if(e == null)
                             continue;
-
+                        
+                        
                         await _eventDispatcher.Dispatch(e.EventData);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        // ignored
+                        _logger.Error(ex, "Error occured when processing event message.");
                     }
                 }
             } );

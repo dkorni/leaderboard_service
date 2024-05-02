@@ -1,4 +1,10 @@
 namespace LeaderboardService.Contracts.Events;
 
-public record UpdateUserScoreEventData(int UserId, int Score, DateTime TimeStamp) :
-    EventData(TimeStamp);
+public class UpdateUserScoreEventData : IEventData
+{
+    public int UserId { get; set; }
+
+    public int Score { get; set; }
+    
+    public DateTime TimeStamp { get; set; }
+}

@@ -4,6 +4,5 @@ namespace LeaderboardService.EventHandlers.Interfaces;
 
 public interface IEventDispatcher
 {
-    Task Dispatch<TEventData>(TEventData eventData)
-        where TEventData : EventData;
+    Task Dispatch<T>(T eventData) where T : IEventData;
 }

@@ -5,9 +5,9 @@ namespace LeaderboardService.Application.Interfaces;
 using System;
 using System.Linq.Expressions;
 
-public interface IRepository<TEntity> where TEntity : Entity
+public interface IRepository<TEntity> where TEntity : IEntity
 {
-    Task<TEntity?> GetById(int id);
+    Task<TEntity?> GetById(Guid id);
     
     Task<TEntity[]> GetAll();
     Task<TEntity[]> GetAll(int page, int pageSize);

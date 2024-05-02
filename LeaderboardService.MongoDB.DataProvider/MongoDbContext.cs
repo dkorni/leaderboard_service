@@ -1,6 +1,5 @@
 ﻿using LeaderboardService.Domain;
 using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
 using MongoDB.EntityFrameworkCore.Extensions;
 
 namespace LeaderboardService.MongoDB.DataProvider;
@@ -16,7 +15,8 @@ public class MongoDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<LeaderBoardMemberModel>().ToCollection("leaderBoardMembers");
+        
+        base.OnModelCreating(modelBuilder);
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaderboardService.MongoDB.DataProvider;
 
-public class MongoDbRepository<TEntity> : IRepository<TEntity> where TEntity : Entity
+public class MongoDbRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
 {
     private readonly IDbContextFactory<MongoDbContext> _dbContextFactory;
 
@@ -14,7 +14,7 @@ public class MongoDbRepository<TEntity> : IRepository<TEntity> where TEntity : E
         _dbContextFactory = dbContextFactory;
     }
     
-    public async Task<TEntity?> GetById(int id)
+    public async Task<TEntity?> GetById(Guid id)
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
 
@@ -49,9 +49,11 @@ public class MongoDbRepository<TEntity> : IRepository<TEntity> where TEntity : E
     public async Task AddOrUpdate(TEntity entity)
     {
         await using var dbContext = await _dbContextFactory.CreateDbContextAsync();
-       
+
         if (dbContext.Entry(entity).State == EntityState.Detached)
+        {
             dbContext.Set<TEntity>().Add(entity);
+        }
         
         await dbContext.SaveChangesAsync(); 
     }
