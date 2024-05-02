@@ -61,3 +61,8 @@ For testing purposes, a mock game server was developed to send events to Kafka, 
 1. Clone this repository.
 2. Open a terminal in the local directory.
 3. Run: `docker-compose -f docker-compose-with-mock-server-arm64.yml up`.
+
+### Logs
+The service utilizes the Serilog library for tracing logs. All logs are displayed both in the console and Seq.
+
+To monitor logs in Seq, open the following link in your browser: http://localhost:8080/
