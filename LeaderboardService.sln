@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		docker-compose-arm64.yml = docker-compose-arm64.yml
 		docker-compose-with-mock-server-arm64.yml = docker-compose-with-mock-server-arm64.yml
+		docker-compose.yml = docker-compose.yml
+		docker-compose-with-mock-server.yml = docker-compose-with-mock-server.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderboardService.EventHandlers", "LeaderboardService.EventHandlers\LeaderboardService.EventHandlers.csproj", "{ACF2DDD0-23ED-4B10-87DD-6CBECB396B35}"

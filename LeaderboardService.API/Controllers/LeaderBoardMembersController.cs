@@ -8,11 +8,11 @@ namespace LeaderboardService.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class LeaderBoardMemberController : ControllerBase
+public class LeaderBoardMembersController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public LeaderBoardMemberController(IMediator mediator)
+    public LeaderBoardMembersController(IMediator mediator)
     {
         _mediator = mediator;
     }
