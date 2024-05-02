@@ -6,7 +6,7 @@ Leaderboard Service is a .NET-based application designed to provide score inform
 
 ### Get Leaderboard
 ```
-GET http://localhost/leaderboards?page=1&pageSize=10
+GET http://localhost/leaderboardmembers?page=1&pageSize=10
 ```
 
 #### Response
